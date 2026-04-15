@@ -74,4 +74,5 @@ $user = "root";
 $password = "";
 
 5. Execute no navegador
-http://localhost/barbearia
+http://localhost/barbearia/assets
+
