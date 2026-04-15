@@ -1,0 +1,172 @@
+#geral {
+	background-color: #eceaea;
+}
+
+#login {   
+
+    background:  #1e2a3fff !important;
+    background-size: cover;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;    
+    overflow: hidden;/* oculta(trava) a barra de rolagem*/
+}
+
+.menu {
+	margin-bottom: 25px;
+}
+
+.app {
+	margin-top: 25px;
+}
+
+.pagina {
+	border:solid 1px #DFDFDF;
+	padding:25px !important;
+}
+
+li.list-group-item.active {
+	background-color: #fff;
+	border-color: #04136b;
+    border-left:solid 10px #04136b;
+}
+
+a{
+	text-decoration: none !important;
+	
+}
+
+li a {
+	color: #212529;
+}
+
+li a:hover {
+	text-decoration: none;
+}
+
+h4 {
+	color: #1e2a3fff !important;
+}
+
+.navbar-logo img{
+	margin-left: 40px;    
+    height: 80px;
+    width: auto;
+    float: left;
+}
+
+.btn2{
+	background-color: #212529;
+	color: #fff;
+}
+
+.btn-home{
+	display: inline!important;
+	margin-top: 1em;
+	margin-right: 24vh;
+	float: right;
+
+}
+
+#topo {
+    width: 57,5em;
+    height: 40px;   
+    background: #1e2a3fff;
+    margin-bottom: 50px;
+}
+
+.logo img{
+    margin-left: 40px;    
+    height: 80px;
+    width: auto;
+    float: left;
+}
+
+#topo h1{    
+    text-indent: -3000px;
+    color: white;    
+}
+
+.span-topo{
+	color: #fff;
+	float: right;
+	line-height: 40px;
+}
+
+.input-home{
+	width: 25%;
+	float: right;
+}
+
+.fa-gear-code{
+	color: red!important;
+}
+
+/*
+****  Layout-login****
+*/
+
+#container-login{
+    width: 400px;
+    height: 320px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.3);
+    margin-top: 140px;
+    border-radius: 12px;
+}
+
+#container-login img{
+    width: 400px;
+    height: 270px;
+    margin-top: -130px;
+}
+
+#login input{
+    height: 35px;
+    width: 320px;
+    margin: 10px 10%;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+
+#login .button{
+    width: 100px;/*22.5%*/
+    margin: 0 150px;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 5px;
+    background: #1e2a3fff;
+    padding-left: 0;
+    color: white;
+
+}
+#filtros table {
+    width: 180;
+    display: block;
+    margin: 80px 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+Formatação da tabela
+*/
+
+table {
+	width:100%;
+}
+
+td{
+	padding: 5px;
+	border-bottom: 1px solid #c3c3c3;
+}
+
+.celula-alinhamento{
+	
+	width: 10vh;
+}
+
+.nome-cliente{
+	width:50vh;
+}
+

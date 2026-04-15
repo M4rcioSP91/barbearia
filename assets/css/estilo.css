@@ -1,0 +1,279 @@
+/*Limpar formatações padrão*/
+
+*{
+    margin: 0px;
+    padding: 0;
+}
+
+/*
+****  Geral ****
+*/
+body {   
+
+    background:  #1e2a3fff !important;
+    background-size: cover;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;    
+    overflow: hidden;/* oculta(trava) a barra de rolagem*/
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*
+****  Layout-login****
+*/
+
+#container-login{
+    width: 400px;
+    height: 320px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.3);
+    margin-top: 140px;
+    border-radius: 12px;
+}
+
+#container-login img{
+    width: 400px;
+    height: 270px;
+    margin-top: -130px;
+}
+
+#login input{
+    height: 35px;
+    width: 320px;
+    margin: 10px 10%;
+    padding-left: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+
+#login .button{
+    width: 100px;/*22.5%*/
+    margin: 0 150px;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 5px;
+    background: #1e2a3fff;
+    padding-left: 0;
+    color: white;
+
+}
+#filtros table {
+    width: 180;
+    display: block;
+    margin: 80px 20px;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* Layout Paginas gerais*/
+
+#container-home{
+    width: 57,5em;
+    margin: 0 auto;
+    min-width: 820px;
+    
+}
+
+#topo {
+    width: 57,5em;
+    height: 40px;   
+    background: #2f3031ff;
+    margin-bottom: 50px;
+}
+
+.logo img{
+    margin-left: 40px;    
+    height: 80px;
+    width: auto;
+    float: left;
+}
+
+#topo h1{    
+    text-indent: -3000px;
+    color: white;    
+}
+
+#conteudo-lateral ul{
+    height: 180px;
+    height: 40px;
+    
+}
+#conteudo{
+    width: 57,5em;
+    min-width: 920px;
+    height: 100vh;
+    min-height: 400px;
+    margin: 0 auto;
+    border: 1px solid rgb(255, 255, 0);
+}
+
+#conteudo-lateral{
+    width: 180px;
+    height: 100vh;
+    min-height: 400px;
+    background: rgba(48, 49, 50,0.5);
+    float: left;
+    text-indent: 20px;
+    
+    border: 1px solid red;
+    
+}
+
+#conteudo-principal{
+    
+    min-width: 100vh;
+    height: 100%;
+    min-height: 400px;
+    background: rgba(48, 49, 50,0.5);
+    float: right;
+    border: 1px solid green;
+}
+
+
+
+
+ #navegacao a{
+    line-height: 40px;
+    color:white;
+}
+
+#navegacao a:hover{
+    padding-left: 10px;
+    color: #f3f3f3;
+}
+
+.adicionar-servico{
+    float: right;    
+    margin-top: 155px;    
+    margin-right: 50px;
+}
+
+.adicionar-servico input, .filtrar{
+    width: 200px;
+    height: 30px;
+    border-color: red;
+    background-color: rgb(158, 10, 10);
+    color: #FFFFFF;
+    float: right; 
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+
+.adicionar-servico input:focus{
+    background-color: rgb(249, 4, 4);
+    border-color: rgb(96, 13, 13);
+    
+}
+
+.adicionar-servico input:hover{
+cursor: pointer;
+}
+
+#rodape{
+    clear: both;
+    width: 57,5em;
+    height: 40px;
+    background: rgba(48, 49, 50,0.5);
+    margin: 20px auto;
+    text-align: right;
+    font-size: 15px;
+    line-height: 40px;
+}
+
+.direitos{
+    padding-right: 20px;
+    color: white;
+    display: inline;
+    
+}
+
+body.home #navegacao li#home,
+body.Dashboard #navegacao li#Dashboard,
+body.Servicos #navegacao li#Servicos{
+    background: rgb(4, 19, 107);
+    font-size: 0.9em;
+    
+}
+
+.opcoes{
+    width: 300px;
+    padding: 10px 20px;
+    margin: 50px;
+}
+
+.valor{
+    width: 50px;
+    padding: 10px 20px;
+    margin: 50px;
+}
+
+
+/*Dash board*/
+
+#filtros{
+    background: black;
+    width: 80%;
+}
+
+#indicadores{
+    width: 680px;
+    height: 100px;
+    margin: 20px auto;
+    background: #565656;
+    color: #FFFFFF;
+}
+
+.mostradores{    
+    background: #c1c1c1;
+    width: 155px;
+    height: 60px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.mostradores-direita{    
+    background: #c1c1c1;
+    width: 155px;
+    height: 60px;
+    float: left;
+    margin-top: 20px;
+}
+
+#indicadores p{
+    line-height: 25px;
+    padding-left: 10px;
+}
+
+#grafico{
+    width: 680px;
+    height: 200px;
+    margin: 20px auto;
+    background: #565656;
+    color: #FFFFFF;
+}
+
+.tabela{
+    width: 400px;
+    background: #c1c1c1;
+    display: inline;
+    margin: 20px 20px;
+    float: left;
+}
+
+.tabela td{
+    background:#FFFFFF;
+}
