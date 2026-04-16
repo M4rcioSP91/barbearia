@@ -24,7 +24,7 @@
 			function editar(id,valor_do_servico) {
 				//criar um form de edicao
 				let form = document.createElement('form')
-				form.action = '#'
+				form.action = 'servico_controller.php?acao=atualizar'
 				form.method = 'post'
 				form.className = 'row'
 
@@ -120,7 +120,7 @@
 									</div>
 									<div class="form-group">
 										<label>Valor:</label>
-										<input type="text" class="form-control" name="valor" placeholder="Exemplo: 35,00" style="width: 30%;">
+										<input type="text" class="form-control" name="valor" placeholder="R$ 35,00" style="width: 30%;">
 									</div>
 
 									<button class="btn2 btn">Cadastrar</button>

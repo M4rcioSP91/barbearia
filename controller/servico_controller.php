@@ -25,6 +25,19 @@
         $servicoService = new servicoService($conexao, $servico);
         $servicos = $servicoService->recuperar();
     }
+    else if ($acao == 'atualizar') {
+        
+       $servico = new servico ();
+       $servico->__set('id', $_POST['id']);
+       $servico->__set('valor_do_servico', $_POST['valor']);
+
+       $conexao = new conexao();
+
+       $servicoService = new servicoService($conexao, $servico);
+       if($servicoService->atualizar()) {
+        header('Location: servicos.php');
+       }
+    }
 
 
 ?>

@@ -24,7 +24,7 @@
 			function editar(id,txt_telefone) {
 				//criar um form de edicao
 				let form = document.createElement('form')
-				form.action = '#'
+				form.action = 'cliente_controller.php?acao=atualizar'
 				form.method = 'post'
 				form.className = 'row'
 

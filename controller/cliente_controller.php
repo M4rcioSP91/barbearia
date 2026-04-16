@@ -25,4 +25,18 @@
         $clienteService = new clienteService($conexao, $cliente);
         $clientes = $clienteService->recuperar();
     }
+    
+    else if ($acao == 'atualizar') {
+        
+       $cliente = new cliente ();
+       $cliente->__set('id', $_POST['id']);
+       $cliente->__set('telefone', $_POST['telefone']);
+
+       $conexao = new conexao();
+
+       $clienteService = new clienteService($conexao, $cliente);
+       if($clienteService->atualizar()) {
+        header('Location: cadastroCliente.php');
+       }
+    }
 ?>

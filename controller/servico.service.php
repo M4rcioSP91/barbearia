@@ -27,6 +27,12 @@ public function __construct(conexao $conexao,servico $servico){//recebe a conexa
         
     }
     public function atualizar(){ // update
+
+        $query = "update tb_servicos set valor_do_servico = :valor where id = :id";
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(':valor', $this->servico->__get('valor_do_servico'));
+        $stmt->bindValue(':id', $this->servico->__get('id'));
+        return $stmt->execute();
         
     }
     public function remover(){ // delete

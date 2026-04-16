@@ -26,6 +26,12 @@ public function __construct(conexao $conexao,cliente $cliente){//recebe a conexa
         return $stmt->fetchALL(PDO::FETCH_OBJ);
     }
     public function atualizar(){ // update
+
+        $query = "update tb_clientes set telefone = :telefone where id = :id";
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(':telefone', $this->cliente->__get('telefone'));
+        $stmt->bindValue(':id', $this->cliente->__get('id'));
+        return $stmt->execute();
         
     }
     public function remover(){ // delete
