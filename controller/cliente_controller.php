@@ -5,6 +5,7 @@
 
     $acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
 
+    
     if ($acao == 'inserir'){
     $cliente = new cliente ();
     $cliente->__set('nome',$_POST['nome']); // aqui o atributo é o mesmo do banco de dados "descricao" que ira receber o input servico do front
@@ -38,5 +39,18 @@
        if($clienteService->atualizar()) {
         header('Location: cadastroCliente.php');
        }
+    }
+
+    else if ($acao == 'remover') {
+
+        $cliente = new cliente();
+        $cliente->__set('id', $_GET['id']);
+
+        $conexao = new conexao();
+
+        $clienteService = new clienteService($conexao, $cliente);
+        $clienteService->remover();
+
+        header('Location: cadastroCliente.php');
     }
 ?>

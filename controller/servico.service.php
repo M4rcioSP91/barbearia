@@ -36,6 +36,11 @@ public function __construct(conexao $conexao,servico $servico){//recebe a conexa
         
     }
     public function remover(){ // delete
+
+        $query = 'delete from tb_servicos where id = :id';
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(':id', $this->servico->__get('id'));
+        return $stmt->execute();
         
     }
 }

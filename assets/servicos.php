@@ -70,6 +70,10 @@
 
 				
 			}
+
+			function remover(id){
+				location.href = 'servicos.php?acao=remover&id='+id;
+			}
 		</script>
 
 	</head>
@@ -145,7 +149,7 @@
 									<div class="col-sm-3 mt-2 d-flex justify-content-between">
 										
 										<i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $servico->id ?>, <?= str_replace('.',',', $servico->valor_do_servico) ?>)"></i>
-										<i class="fas fa-trash-alt fa-lg text-danger"></i>
+										<i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $servico->id ?>)"></i>
 									</div>
 								</div>
 																	
