@@ -28,7 +28,7 @@
 				let total = 0;
 
 				document.querySelectorAll('.check-servico:checked').forEach(function(item) {
-					total += parseFloat(item.value);//item.value → valor do checkbox (ex: "10.50")--parseFloat() → transforma em número
+					total += parseFloat(item.dataset.valor);//item.value → valor do checkbox (ex: "10.50")--parseFloat() → transforma em número
 				});
 
 				document.getElementById('total').innerText = 'R$' + total.toFixed(2).replace('.', ',');
@@ -82,8 +82,9 @@
 								<h4>Serviço atual</h4>
 								<hr />
 															
-								
+								<form method="post" action="home_total_controller.php?acao=salvar_atendimento">
 								<table>
+									
 								<? foreach($servicos as $indice => $servico) { ?>
 										
 
@@ -93,12 +94,18 @@
 											<td class="nome-cliente"><div class="col-sm-9"><?= $servico->descricao ?></div></td>
 											<td class=><?= str_replace('.',',', $servico->valor_do_servico) ?></td>
 											<td class="celula-alinhamento"><div class="form-check">
-												<input 
-													class="check-servico"
-													name="servicos[]" 
-													type="checkbox" 
-													value="<?= $servico->valor_do_servico ?>"
-													data-id="<?= $servico->id ?>">
+												<input
+													type="checkbox"
+													name="servicos[]"
+													class="check-servico"																										
+													value="<?= $servico->id ?>"
+													data-valor="<?= $servico->valor_do_servico ?>"
+
+													<input
+													type="hidden"
+													name="servico_ids[]"
+													value="<?= $servico->id ?>"
+													>
 											</td>
 															
 
@@ -107,7 +114,7 @@
 
                                 <br>
 
-								<form method="post" action="home_total_controller.php?acao=salvar_atendimento">
+								
 								<div class="row mb-3 d-flex align-items-center tarefa">
 									<div class="col-sm-9">Total
 										<span class="input-home" type="text" id="total" readonly>R$ 0,00</span></div>

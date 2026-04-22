@@ -16,21 +16,32 @@ public function __construct(conexao $conexao,homeTotal $homeTotal){//recebe a co
     $stmt = $this->conexao->prepare($query);
     $stmt->bindValue(':total', $this->homeTotal->__get('valorTotal'));
     
-    $stmt->execute();                                     //nome da coluna,nome da coluna    //valor, Valor passados por parametro para ser substituido depois
+    $stmt->execute();
+    
+    return $this->conexao->lastInsertId();
        
     }
-    public function recuperar(){ // read
-        
-    }
-    public function atualizar(){ // update
+    
+    public function inserirServicos($atendimento_id, $servico_id){ 
 
-        
-        
-    }
-    public function remover(){ // delete
+         // busca o valor do serviço
+        $query = "SELECT valor_do_servico FROM tb_servicos WHERE id = :id";
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(':id', $servico_id);
+        $stmt->execute();
 
-        
-    }
+        $servico = $stmt->fetch();
+
+        // insere com valor
+
+        $query = "INSERT INTO  tb_atendimento_servico (idAtendimento, idServico, valorHistorico)VALUES (:atendimento_id,:servico_id, :valor)";
+        $stmt = $this->conexao->prepare($query);
+        $stmt->bindValue(':atendimento_id', $atendimento_id);
+        $stmt->bindValue(':servico_id', $servico_id);
+        $stmt->bindValue(':valor', $servico['valor_do_servico']);
+
+        return $stmt->execute();
+             
 }
-
+}
 ?>

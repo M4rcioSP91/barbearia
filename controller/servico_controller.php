@@ -8,8 +8,9 @@
     
     if ($acao == 'inserir'){
     $servico = new servico ();
+    $valor = str_replace(',','.',$_POST['valor']);
     $servico->__set('descricao',$_POST['servico']); // aqui o atributo é o mesmo do banco de dados "descricao" que ira receber o input servico do front
-    $servico->__set('valor_do_servico',$_POST['valor']); // aqui o atributo é o mesmo do banco de dados "valor_do_servico" que ira receber o imput valor do front
+    $servico->__set('valor_do_servico',$valor); // aqui o atributo é o mesmo do banco de dados "valor_do_servico" que ira receber o imput valor do front
 
     $conexao = new conexao();
 

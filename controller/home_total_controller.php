@@ -14,8 +14,14 @@
     $conexao = new conexao();
 
     $homeTotalService = new homeTotalService($conexao, $homeTotal);
-    
-    $homeTotalService->inserir();
+
+    $atendimento_id = $homeTotalService->inserir();
+
+    if(isset($_POST['servicos'])) {
+        foreach ($_POST['servicos'] as $servico_id) {
+            $homeTotalService->inserirServicos($atendimento_id, $servico_id);
+        }
+    }
     
     
 
