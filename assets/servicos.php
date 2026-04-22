@@ -96,6 +96,8 @@
 			<h5> Cadastro realizado com sucesso!</h5>
 		</div>
 
+		<meta http-equiv="refresh" content="3;url=servicos.php">
+
 		<? } ?>
 
 		<div class="container app">
