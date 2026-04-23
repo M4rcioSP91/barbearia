@@ -50,6 +50,7 @@ CREATE table tb_atendimento_servico (
     idAtendimento int not null,
     idServico int not null,
     valorHistorico decimal(10,2) not null,
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (idAtendimento) REFERENCES tb_atendimento (id) ON DELETE CASCADE,
     FOREIGN KEY (idServico) REFERENCES tb_servicos (id)
 );

@@ -99,7 +99,7 @@
 													name="servicos[]"
 													class="check-servico"																										
 													value="<?= $servico->id ?>"
-													data-valor="<?= $servico->valor_do_servico ?>"
+													data-valor="<?= $servico->valor_do_servico ?>">
 
 													<input
 													type="hidden"
