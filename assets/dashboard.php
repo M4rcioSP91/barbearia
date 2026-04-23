@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/f7caf1b7d7.js" crossorigin="anonymous"></script>
+		
 
 	</head>
 
@@ -38,21 +39,98 @@
 
 				<div class="col-md-9">
 					<div class="container pagina">
-						<div class="row">
-							<div class="col">
+													
 								<h4>DashBoard</h4>
 								<hr />
 
-                                <div>
-                                    local para adicionar o grafico
-                                <canvas>local para adicionar o grafico</canvas>
-                                </div>
+								<!--LINHA DOS CARDS -->
+						<div class="row">
 
+							<div class="col-md-3">
+
+										<div class="card border-light mb-3" style="max-width: 10rem;">
+										<div class="card-header">DIA</div>
+										<div class="card-body">
+											<p class="card-text">servidor</p>
+										</div>
+										</div>
+										</div>
+
+										<div class="col-md-3">
+										<div class="card border-light mb-3" style="max-width: 10rem;">
+										<div class="card-header">SEMANA</div>
+										<div class="card-body">
+											<p class="card-text">servidor</p>
+										</div>
+										</div>
+										</div>
+
+										<div class="col-md-3">
+										<div class="card border-light mb-3" style="max-width: 10rem;">
+										<div class="card-header">MES</div>
+										<div class="card-body">
+											<p class="card-text">servidor</p>
+										</div>
+										</div>
+										</div>
+
+										<div class="col-md-3">
+										<div class="card border-light mb-3" style="max-width: 10rem;">
+										<div class="card-header">ANO</div>
+										<div class="card-body">
+											<p class="card-text">servidor</p>
+										</div>
+										</div>
+										</div>
+
+									
+
+									
 							</div>
+								<!--LINHA DOS CARDS FIM-->
+								<!--LINHA DO GRAFICO-->
+								<div class="card" style="width: 100%;">
+								<div class="card-header">
+									Produção
+								</div>
+								<div class="card-body">
+									<!-- gráfico aqui -->
+									
+										<div id="meuGrafico" style="width: 400px; height: 300px;">
+										</div>
+								</div>
+								</div>
+
+								<!--LINHA DO GRAFICO FIM-->
 						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<script src="https://www.gstatic.com/charts/loader.js"></script>
+		<script>
+		google.charts.load('current', {packages: ['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+
+		function drawChart() {
+			
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Element');
+			data.addColumn('number', 'Percentage');
+
+			data.addRows([
+				['Nitrogen', 0.78],
+				['Oxygen', 0.21],
+				['Other', 0.01]
+			]);
+
+			var chart = new google.visualization.ColumnChart(document.getElementById('meuGrafico'));
+			chart.draw(data, null);
+			}
+
+
+		</script>
 	</body>
 </html>
