@@ -40,25 +40,35 @@
 					<div class="container pagina">
 						<div class="row">
 							<div class="col">
-								<h4>Configure sua conta e informações</h4>
+								<h4>Novo Serviço</h4>
 								<hr />
 
 								<div class="input-group mb-3">
-									<a href="configuracao.edit.php" style="width: 100%">
-									<button type="button" class="btn btn-light" style="width: 100%">
-									<div class="sc-cwHptR cgrzzg account-data__card">
-									<div >
-										<i class="fa-solid fa-circle-user"></i>
-									</div>
-									<div class="account-data__content">
-										<h5><div>Alterar dados de perfil</div></h5>
-											<p class="sc-fjvvzt jUyPCe">Altere seu e-mail, senha ou outra informação pessoal.</p>
+
+									<form class="row g-3">
+
+
+									<div class="col-md-9">
+										<label for="validationServer03" class="form-label" >Senha</label>
+										<input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="Nova senha">
+										<div id="validationServer03Feedback" class="invalid-feedback">
+										Digite uma senha valida entre 8 - 20 caracteres.
 										</div>
-									<div >
-										<i class="fa-solid fa-chevron-right"></i>
 									</div>
-									</button>
-									</a>
+
+									<div class="col-md-9" style="margin-bottom: 3em">
+										<label for="validationServer03" class="form-label" >Confirmação de senha</label>
+										<input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="Repita a senha">
+										<div id="validationServer03Feedback" class="invalid-feedback">
+										Digite uma senha valida entre 8 - 20 caracteres.
+										</div>
+									</div>
+
+									<div class="col-12">
+										<button class="btn btn-dark">Salvar</button>
+									</div>
+									
+									</form>
 							</div>
 						</div>
 					</div>
