@@ -22,6 +22,8 @@ CREATE table tb_usuarios (
     email varchar(255) not null UNIQUE,
     senha varchar(255) not null,
     telefone varchar(15),
+    NomeEmpresa varchar(255),
+    tipo ENUM('admin', 'funcionario', 'cliente'),
     status ENUM('ativo','inativo') DEFAULT 'ativo',
     criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -30,7 +32,6 @@ CREATE table tb_funcionarios (
 	id int not null PRIMARY KEY AUTO_INCREMENT,
     idUsuario int,
     Funcao varchar(100),
-    telefone varchar(15),
     criado_em DATE DEFAULT CURRENT_DATE,
     FOREIGN key (idUsuario) REFERENCES tb_usuarios (id)
 );

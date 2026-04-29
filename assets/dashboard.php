@@ -1,5 +1,6 @@
 <?
 	require 'dashboard_controller.php';
+	require 'auth.php';
 
 ?>
 
@@ -26,7 +27,7 @@
 					<img src="img/logo.png" width="30" height="30" >					
 				</a>
 				<div class="span-topo">
-				<span><a href="index.php">Sair <i class="fa-solid fa-right-from-bracket"></i></a></span>
+				<span><a href="logout.php" class="btn btn-danger" style="height: 2em">Sair <i class="fa-solid fa-right-from-bracket"></i></a></span>
 				</div>
 			</div>
 		</nav>

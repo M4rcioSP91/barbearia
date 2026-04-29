@@ -19,6 +19,7 @@ body {
 a {
     text-decoration: none;
     color: white;
+    margin: 0 auto;
 }
 
 ul{
@@ -37,7 +38,7 @@ ul{
     margin: 0 auto;
     background-color: rgba(255,255,255,0.3);
     margin-top: 140px;
-    border-radius: 12px;
+    border-radius: 12px;    
 }
 
 #container-login img{
@@ -277,3 +278,4 @@ body.Servicos #navegacao li#Servicos{
 .tabela td{
     background:#FFFFFF;
 }
+
