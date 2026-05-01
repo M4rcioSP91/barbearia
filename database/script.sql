@@ -50,8 +50,10 @@ CREATE table tb_atendimento_servico (
 	id int not null PRIMARY KEY AUTO_INCREMENT,
     idAtendimento int not null,
     idServico int not null,
+    idUsuario int not null,
     valorHistorico decimal(10,2) not null,
     criado_em DATE DEFAULT CURRENT_DATE,
     FOREIGN KEY (idAtendimento) REFERENCES tb_atendimento (id) ON DELETE CASCADE,
-    FOREIGN KEY (idServico) REFERENCES tb_servicos (id)
+    FOREIGN KEY (idServico) REFERENCES tb_servicos (id),
+    FOREIGN KEY (idUsuario) REFERENCES tb_usuarios (id)
 );

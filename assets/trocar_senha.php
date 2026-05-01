@@ -13,7 +13,22 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<script src="https://kit.fontawesome.com/f7caf1b7d7.js" crossorigin="anonymous"></script>
+		
+		<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const form = document.querySelector('form');
 
+			form.addEventListener('submit', function(e) {
+				let senha = document.querySelector('[name="nova_senha"]').value;
+				let confirmar = document.querySelector('[name="confirmar_senha"]').value;
+
+				if(senha !== confirmar) {
+					alert('As senhas não coincidem');
+					e.preventDefault();
+				}
+			});
+		});
+		</script>
 	</head>
 
 	<body id="geral">
@@ -47,31 +62,43 @@
 								<h4>Novo Serviço</h4>
 								<hr />
 
-								<div class="input-group mb-3">
+								
+									<form class="row g-3" method="post" action="atualizar_senha_controller.php">
 
-									<form class="row g-3">
+									<div class="col-md-9">
+										<label>Senha atual</label>
+
+										<input type="password" name="senha_atual" class="form-control <?= (isset($_GET['erro']) && $_GET['erro'] == 'senha_incorreta') ? 'is-invalid' : '' ?>" required minlength="8">
+
+										<?php if(isset($_GET['erro']) && $_GET['erro'] == 'senha_incorreta'): ?>
+											<div class="invalid-feedback">
+												Senha incorreta
+											</div>
+										<?php endif; ?>
+									</div>
 
 
 									<div class="col-md-9">
-										<label for="validationServer03" class="form-label" >Senha</label>
-										<input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="Nova senha">
-										<div id="validationServer03Feedback" class="invalid-feedback">
-										Digite uma senha valida entre 8 - 20 caracteres.
-										</div>
+										<label for="validationServer03" class="form-label" >Nova senha</label>
+										<input type="password" name="nova_senha" class="form-control" aria-describedby="validationServer03Feedback" required minlength="8" >
+										
 									</div>
 
-									<div class="col-md-9" style="margin-bottom: 3em">
-										<label for="validationServer03" class="form-label" >Confirmação de senha</label>
-										<input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required placeholder="Repita a senha">
-										<div id="validationServer03Feedback" class="invalid-feedback">
-										Digite uma senha valida entre 8 - 20 caracteres.
-										</div>
+									<div class="col-md-9 mb-3">
+										<label>Confirmação de senha</label>
+										<input type="password" name="confirmar_senha" class="form-control <?= (isset($_GET['erro']) && $_GET['erro'] == 'senha_diferente') ? 'is-invalid' : '' ?>" required minlength="8">
+										<?php if(isset($_GET['erro']) && $_GET['erro'] == 'senha_diferente'): ?>
+											<div class="invalid-feedback">
+												Senhas devem ser iguais
+											</div>
+										<?php endif; ?>
 									</div>
 
 									<div class="col-12">
 										<button class="btn btn-dark">Salvar</button>
 									</div>
-									
+									</div>
+															
 									</form>
 							</div>
 						</div>

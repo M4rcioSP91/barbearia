@@ -48,7 +48,16 @@
 								<hr />
 
 								<div class="input-group mb-3">
-									<a href="configuracao.edit.php" style="width: 100%">
+									<?php if(isset($_GET['status']) && $_GET['status'] == 'senha_ok'): ?>
+										
+											<script>
+											alert ('Senha alterada com sucesso!');
+											</script>
+										
+									<?php endif; ?>
+
+								<div class="input-group mb-3">
+									<a href="minhaConta.php" style="width: 100%">
 									<button type="button" class="btn btn-light" style="width: 100%">
 									<div class="sc-cwHptR cgrzzg account-data__card">
 									<div >

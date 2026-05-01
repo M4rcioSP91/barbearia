@@ -1,5 +1,6 @@
 <?php
     session_start();
+    var_dump($_SESSION);
     
     require "../controller/login.service.php";
     require "../model/conexao.php";

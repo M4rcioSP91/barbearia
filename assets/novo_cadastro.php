@@ -10,6 +10,17 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		
+        <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            let senha = document.querySelector('[name="nova_senha"]').value;
+            let confirmar = document.querySelector('[name="confirmar_senha"]').value;
+
+            if(senha !== confirmar) {
+                alert('As senhas não coincidem');
+                e.preventDefault();
+            }
+        });
+        </script>
     </head>
     <body>
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh; background:#f5f5f5;">
@@ -38,11 +49,11 @@
                             </div>
                             <div class="col-md-12">
                                 <label for="inputPassword3" class="form-label">Senha</label>
-                                <input type="password" class="form-control" name="senha" placeholder="*********">
+                                <input type="password" class="form-control" name="senha" placeholder="*********" required minlength="8">
                             </div>
                             <div class="col-md-12">
                                 <label for="senha" class="form-label">Confirmar Senha</label>
-                                <input type="password" class="form-control" name="inputPassword4" placeholder="*********">
+                                <input type="password" class="form-control" name="confirmar_senha" placeholder="*********" required minlength="8">
                             </div>
 
                             <div class="col-12" style="margin-top: 2em;">

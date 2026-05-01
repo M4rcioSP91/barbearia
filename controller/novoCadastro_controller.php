@@ -29,7 +29,7 @@ if ($acao == 'inserir' && $_SERVER['REQUEST_METHOD'] === 'POST') {
     $novoCadastroService = new novoCadastroService($conexao, $cadastro);
     $novoCadastroService->inserir();
 
-    header('Location: home.php');
+    header('Location: index.php');
     exit;
 }         
     
