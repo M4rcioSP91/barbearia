@@ -1,7 +1,9 @@
 <?php
-session_start();
+if(session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-if (!isset($_SESSION['usuario_id'])) {
-    header('Location: home.php');
+if(!isset($_SESSION['usuario_id']) || !isset($_SESSION['tipo'])) {
+    header('Location: index.php');
     exit;
 }

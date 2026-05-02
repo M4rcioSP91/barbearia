@@ -34,11 +34,12 @@ public function __construct(conexao $conexao,homeTotal $homeTotal){//recebe a co
 
         // insere com valor
 
-        $query = "INSERT INTO  tb_atendimento_servico (idAtendimento, idServico, valorHistorico)VALUES (:atendimento_id,:servico_id, :valor)";
+        $query = "INSERT INTO  tb_atendimento_servico (idUsuario, idAtendimento, idServico, valorHistorico)VALUES (:idUsuario, :atendimento_id,:servico_id, :valor)";
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(':atendimento_id', $atendimento_id);
         $stmt->bindValue(':servico_id', $servico_id);
         $stmt->bindValue(':valor', $servico['valor_do_servico']);
+        $stmt->bindValue(':idUsuario', $this->homeTotal->__get('idUsuario'));
 
         return $stmt->execute();
              

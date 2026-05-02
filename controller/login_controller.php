@@ -1,6 +1,6 @@
 <?php
     session_start();
-    var_dump($_SESSION);
+    //var_dump($_SESSION);
     
     require "../controller/login.service.php";
     require "../model/conexao.php";
@@ -22,6 +22,7 @@
         // cria sessão
         $_SESSION['usuario_id'] = $usuario->id;
         $_SESSION['nome'] = $usuario->nome;
+        $_SESSION['tipo'] = $usuario->tipo;
 
         header('Location: home.php');
         exit;

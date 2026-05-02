@@ -10,7 +10,7 @@ class loginService {
 
     public function autenticar($email){
 
-        $query = "SELECT * FROM tb_usuarios WHERE email = :email LIMIT 1";
+        $query = "SELECT id, nome, senha, tipo FROM tb_usuarios WHERE email = :email LIMIT 1";
 
         $stmt = $this->conexao->prepare($query);
         $stmt->bindValue(':email', $email);

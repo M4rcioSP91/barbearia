@@ -11,11 +11,17 @@ session_start();
 
         //ID vem da sessão 
         $minhaConta->__set('id', $_SESSION['usuario_id']);
+        $minhaConta->__set('nome', $_POST['nome'] ?? null);
+        $minhaConta->__set('sobrenome', $_POST['sobrenome'] ?? null);
+        $minhaConta->__set('nomeEmpresa', $_POST['nomeEmpresa'] ?? null);
+        $minhaConta->__set('telefone', $_POST['telefone'] ?? null);
 
-        // Dados do formulário
-        $minhaConta->__set('senha', $_POST['senha']);
         
+        if(!empty($_POST['email'])) {
+        $minhaConta->__set('email', $_POST['email']);
+        }
 
+             
         $conexao = new Conexao();
         $minhaContaService = new minhaContaService($conexao, $minhaConta);
 

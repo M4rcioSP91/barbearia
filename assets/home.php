@@ -3,7 +3,10 @@
 	require 'servico_controller.php';
 	require 'auth.php';
 
+	//var_dump($_SESSION);
+
 ?>
+
 
 
 
@@ -70,8 +73,10 @@
 			<div class="row">
 				<div class="col-md-3 menu">
 					<ul class="list-group">
-						<li class="list-group-item active"><a href="home.php"><i class="fa-solid fa-house-user"></i> Home</a></li>						
+						<li class="list-group-item active"><a href="home.php"><i class="fa-solid fa-house-user"></i> Home</a></li>
+						<?php if($_SESSION['tipo'] == 'admin') { ?>						
 						<li class="list-group-item"><a href="servicos.php"><i class="fa-solid fa-briefcase"></i> Serviços</a></li>
+						<? } ?>
 						<li class="list-group-item"><a href="dashboard.php"><i class="fa-solid fa-arrow-trend-up"></i> Dashboard</a></li>
 						<li class="list-group-item"><a href="cadastroCliente.php"><i class="fa-solid fa-address-card"></i> Cadastrar Cliente</a></li>
 						<li class="list-group-item"><a href="configuracao.php"><i class="fa-solid fa-gear"></i> Configuração</a></li>

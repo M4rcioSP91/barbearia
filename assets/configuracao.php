@@ -1,5 +1,5 @@
 <?
-	require 'auth.php';
+	require 'auth.php';var_dump($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,9 @@
 				<div class="col-md-3 menu">
 					<ul class="list-group">
 						<li class="list-group-item"><a href="home.php"><i class="fa-solid fa-house-user"></i> Home</a></li>						
+						<?php if($_SESSION['tipo'] == 'admin') { ?>						
 						<li class="list-group-item"><a href="servicos.php"><i class="fa-solid fa-briefcase"></i> Serviços</a></li>
+						<? } ?>
 						<li class="list-group-item"><a href="dashboard.php"><i class="fa-solid fa-arrow-trend-up"></i> Dashboard</a></li>
 						<li class="list-group-item"><a href="cadastroCliente.php"><i class="fa-solid fa-address-card"></i> Cadastrar Cliente</a></li>
 						<li class="list-group-item active"><a href="configuracao.php"><i class="fa-solid fa-gear"></i> Configuração</a></li>
@@ -56,29 +58,51 @@
 										
 									<?php endif; ?>
 
-								<div class="input-group mb-3">
-									<a href="minhaConta.php" style="width: 100%">
-									<button type="button" class="btn btn-light" style="width: 100%">
-									<div class="sc-cwHptR cgrzzg account-data__card">
-									<div >
-										<i class="fa-solid fa-circle-user"></i>
-									</div>
-									<div class="account-data__content">
-										<h5><div>Alterar dados de perfil</div></h5>
-											<p class="sc-fjvvzt jUyPCe">Altere seu e-mail, senha ou outra informação pessoal.</p>
+									<div class="input-group mb-3">
+										<a href="minhaConta.php" style="width: 100%">
+										<button type="button" class="btn btn-light" style="width: 100%">
+										<div class="sc-cwHptR cgrzzg account-data__card">
+											<div >
+												<i class="fa-solid fa-circle-user"></i>
+											</div>
+											<div class="account-data__content">
+												<h5><div>Alterar dados de perfil</div></h5>
+													<p class="sc-fjvvzt jUyPCe">Altere seu e-mail, senha ou outra informação pessoal.</p>
+												</div>
+											<div >
+												<i class="fa-solid fa-chevron-right"></i>
+											</div>
+											</button>
+											</a>
 										</div>
-									<div >
-										<i class="fa-solid fa-chevron-right"></i>
 									</div>
-									</button>
-									</a>
+									
+									<?php if($_SESSION['tipo'] == 'admin') { ?>
+									<div class="input-group mb-3">
+										<a href="adicionarFuncionario.php" style="width: 100%">
+										<button type="button" class="btn btn-light" style="width: 100%">
+										<div class="sc-cwHptR cgrzzg account-data__card">
+											<div >
+												<i class="fa-brands fa-black-tie"></i>
+											</div>
+											<div class="account-data__content">
+												<h5><div>Adcionar funcionario</div></h5>
+													<p class="sc-fjvvzt jUyPCe">Altere seu e-mail, senha ou outra informação pessoal.</p>
+												</div>
+											<div >
+												<i class="fa-solid fa-chevron-right"></i>
+											</div>
+											</button>
+											</a>
+										</div>
+									</div>
+									<?php } ?>
+								</div>
 							</div>
+				
 						</div>
 					</div>
 				</div>
-				
-			</div>
-		</div>
 
 		
 	</body>

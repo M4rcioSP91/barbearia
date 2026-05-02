@@ -21,19 +21,32 @@ public function __construct(conexao $conexao,minhaConta $minhaConta){//recebe a 
 
     public function atualizar() {
 
-    $query = "UPDATE tb_usuarios
-            SET nome = :nome,sobrenome = :sobrenome,nomeEmpresa = :nomeEmpresa,email = :email,telefone = :telefone WHERE id = :id";
+    $query = "UPDATE tb_usuarios SET 
+    nome = :nome,
+    sobrenome = :sobrenome,
+    nomeEmpresa = :nomeEmpresa,
+    telefone = :telefone";
+
+    if(!empty($this->minhaConta->__get('email'))) {
+        $query .= ", email = :email";
+    }
+
+    $query .= " WHERE id = :id";
 
     $stmt = $this->conexao->prepare($query);
 
     $stmt->bindValue(':nome', $this->minhaConta->__get('nome'));
     $stmt->bindValue(':sobrenome', $this->minhaConta->__get('sobrenome'));
     $stmt->bindValue(':nomeEmpresa', $this->minhaConta->__get('nomeEmpresa'));
-    $stmt->bindValue(':email', $this->minhaConta->__get('email'));
     $stmt->bindValue(':telefone', $this->minhaConta->__get('telefone'));
+
+    if(!empty($this->minhaConta->__get('email'))) {
+        $stmt->bindValue(':email', $this->minhaConta->__get('email'));
+    }
+
     $stmt->bindValue(':id', $this->minhaConta->__get('id'));
 
-    return $stmt->execute();
+    $stmt->execute();                               
     }
     
 }
